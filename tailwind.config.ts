@@ -9,7 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'regal-blue': '#243c5a', // example
+        'primary-darkest': '#000814',
+        'primary-darker': '#001D3D',
+        'primary-dark': '#003566',
+        'secondary-light': '#FFC300',
+        'secondary-lightest': '#FFD60A',
       },
       opacity: {
         sixty: '.60', //example
