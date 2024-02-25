@@ -9,16 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'regal-blue': '#243c5a', // example
+        'primary-light': '#FEFAE0',
+        'primary-dark': '#283618',
+        'contrast-dark': '#606c38',
+        'contrast-light': '#DDA15E',
+        'borders-lines': '#BC6C25',
+        'text-dark': '#FFFFFF',
+        'text-light': '#000000',
       },
       opacity: {
         sixty: '.60', //example
       },
-      // backgroundImage: {
-      //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      //   "gradient-conic":
-      //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      // },
     },
   },
   plugins: [],
