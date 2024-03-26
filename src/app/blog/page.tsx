@@ -7,9 +7,13 @@ const BlogPage = async () => {
   return (
     <section>
       <h1 className="bg-primary-dark">Blog</h1>
-      {posts.map((post) => (
-        <BlogPostsContainer key={post.slug} post={post} />
-      ))}
+      {posts ? (
+        <>
+          {posts.map((post) => (
+            <BlogPostsContainer key={post.slug} post={post} />
+          ))}
+        </>
+      ) : null}
     </section>
   );
 };
