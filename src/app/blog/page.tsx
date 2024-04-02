@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPosts } from '../services/getPosts';
+import { getPosts } from '../../services/getPosts';
 import BlogPostsContainer from '@/components/BlogPostsContainer';
 
 const BlogPage = async () => {

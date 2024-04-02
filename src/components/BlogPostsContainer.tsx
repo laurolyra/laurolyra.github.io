@@ -1,4 +1,4 @@
-import { Post } from '@/app/services/getPosts';
+import { Post } from '@/services/getPosts';
 import React from 'react';
 
 const BlogPostsContainer = ({ post }: { post: Post }) => {
