@@ -1,16 +1,16 @@
-import { Post } from '@/services/getPosts';
+// import { Post } from '@/services/getPosts';
 import React from 'react';
 
-const BlogPostsContainer = ({ post }: { post: Post }) => {
-  const { title, headline, slug, date, content } = post;
+const BlogPostsContainer = ({ post }: { post: any }) => {
+  const { slug, name, id } = post;
   return (
     <section key={slug}>
       <h2>Container</h2>
-      <h1 className="bg-primary-dark">{title}</h1>
-      <p>{headline}</p>
+      <h1 className="bg-primary-dark">{name}</h1>
+
       <p>{slug}</p>
-      <p>{date}</p>
-      <p>{content}</p>
+
+      <p>{id}</p>
     </section>
   );
 };
