@@ -7,7 +7,8 @@ export type Post = {
 };
 
 export async function getPosts(): Promise<Post[]> {
-  const response = await fetch(process.env.HYGRAPH_ENDPOINT as string, {
+  const hygraphEndpoint = process.env.HYGRAPH_ENDPOINT as string;
+  const response = await fetch(hygraphEndpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
