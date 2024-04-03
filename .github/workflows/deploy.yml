@@ -27,6 +27,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    env:
+      HYGRAPH_ENDPOINT: ${{ secrets.HYGRAPH_ENDPOINT }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
