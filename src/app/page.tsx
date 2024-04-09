@@ -1,16 +1,18 @@
-import Image from 'next/image';
+import BlogPostsContainer from '@/components/BlogPostsContainer';
+import { getPosts } from '@/services/getPosts';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPosts();
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        width={100}
-        height={24}
-        priority
-      />
-      <h1>Hello page.tsx</h1>
-    </main>
+    <section>
+      <h1 className="bg-primary-dark">Blog</h1>
+      {posts ? (
+        <>
+          {posts.map((post) => (
+            <BlogPostsContainer key={post.slug} post={post} />
+          ))}
+        </>
+      ) : null}
+    </section>
   );
 }
