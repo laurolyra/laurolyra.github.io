@@ -1,3 +1,5 @@
+import { serialize } from 'next-mdx-remote/serialize';
+
 export type Post = {
   title: string;
   headline: string;

@@ -1,7 +1,9 @@
 import { Post } from '@/services/getPosts';
+import ReactMarkdown from 'react-markdown';
 import React from 'react';
+import remarkGfm from 'remark-gfm';
 
-const BlogPostsContainer = ({ post }: { post: Post }) => {
+const BlogPostsContainer = async ({ post }: { post: Post }) => {
   const { title, headline, slug, date, content } = post;
   return (
     <section key={slug}>
@@ -10,7 +12,10 @@ const BlogPostsContainer = ({ post }: { post: Post }) => {
       <p>{headline}</p>
       <p>{slug}</p>
       <p>{date}</p>
-      <p>{content}</p>
+      <div>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      </div>
+      {/* <p>{content}</p> */}
     </section>
   );
 };
