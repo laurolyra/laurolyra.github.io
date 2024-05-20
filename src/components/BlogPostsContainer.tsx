@@ -1,4 +1,4 @@
-import { Post } from '@/services/getPosts';
+import { Post } from '@/services/posts';
 import Link from 'next/link';
 import React from 'react';
 
