@@ -1,14 +1,21 @@
 import { Post } from '@/services/getPosts';
 import ReactMarkdown from 'react-markdown';
-import React from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 
+interface ExtraProps {
+  node?: any;
+}
+
+type H1Props = HTMLAttributes<HTMLHeadingElement> & ExtraProps;
+
 const BlogPostsContainer = async ({ post }: { post: Post }) => {
   const { title, headline, slug, date, content } = post;
-  const H1 = ({ children }): React.ReactNode => (
-    <h1 className="text-2xl">{children}</h1>
-  );
+  const H1:FC<H1Props> = (props) => {
+    const { node, ...rest } = props;
+    return <h1 className="text-2xl" {...rest} />;
+  }
   const H2 = ({ children }) => <h2 className="text-xl">{children}</h2>;
   const H3 = ({ children }) => <h3 className="text-lg">{children}</h3>;
   const P = ({ children }) => (
@@ -30,6 +37,14 @@ const BlogPostsContainer = async ({ post }: { post: Post }) => {
             p(props) {
               const { node, ...rest } = props;
               return <p style={{ color: 'red' }} {...rest} />;
+            },
+            code(props) {
+              const { node, ...rest } = props;
+              return <code style={{ color: 'green' }} {...rest} />;
+            },
+            pre(props) {
+              const { node, ...rest } = props;
+              return <pre style={{ backgroundColor: 'blue' }} {...rest} />;
             },
             img: (img) => {
               return (
