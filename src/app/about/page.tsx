@@ -1,5 +1,5 @@
 import React from 'react';
 
-const AboutPage = () => <h1 className="bg-primary-dark">About</h1>;
+const AboutPage = () => <h1>About</h1>;
 
 export default AboutPage;

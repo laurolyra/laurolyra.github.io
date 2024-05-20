@@ -19,9 +19,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} container mx-auto bg-primary-dark`}>
+      <body className={`${inter.className} container mx-auto`}>
         <ProvidersTree>
-          <main className="min-h-screen">{children}</main>
+          <header className="bg-slate-500 min-h-[5vh]">Main header</header>
+          <main className=" bg-slate-600 min-h-[95vh]">{children}</main>
         </ProvidersTree>
       </body>
     </html>
