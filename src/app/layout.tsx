@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto_Serif as robotoSerif } from 'next/font/google';
 import './globals.css';
 import buildProvidersTree from '@/components/ProvidersTree';
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+const mainFont = robotoSerif({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,9 +20,25 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} container mx-auto bg-primary-dark`}>
+      <body className={`${mainFont.className} w-full mx-auto`}>
         <ProvidersTree>
-          <main className="min-h-screen">{children}</main>
+          <header className="bg-slate-500 text-center">
+            <h1 className="text-3xl">Lauro Lyra Aguiar</h1>
+            <h3 className="text-2xl">Coding. Learning. Posting</h3>
+          </header>
+          <main className="bg-slate-950">{children}</main>
+          <footer className="bg-slate-500 text-center">
+            <p>
+              Made with ♥, nextjs and hygraph by me! Check the code{' '}
+              <Link
+                href="https://github.com/laurolyra/laurolyra.github.io"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                here!
+              </Link>
+            </p>
+          </footer>
         </ProvidersTree>
       </body>
     </html>
