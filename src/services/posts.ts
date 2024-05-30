@@ -27,7 +27,6 @@ export async function getPosts(): Promise<Post[]> {
     }),
   });
   const json = await response.json();
-  console.log('json', json);
   return <Post[]>json.data.posts;
 }
 
