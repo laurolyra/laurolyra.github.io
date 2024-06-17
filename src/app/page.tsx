@@ -10,7 +10,7 @@ export default function Home() {
         height={24}
         priority
       />
-      <h1>Hello page.tsx</h1>
+      <h1>Commit and deploy!</h1>
     </main>
   );
 }
