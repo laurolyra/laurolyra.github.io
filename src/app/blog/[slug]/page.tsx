@@ -1,5 +1,6 @@
 import React from 'react';
 import { getPost, getPosts } from '../../../services/posts';
+import ContentRenderer from '@/components/ContentRenderer';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -16,13 +17,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
     <section>
       <h1>Blogs</h1>
       <p>{post.headline}</p>
-      {/* {posts ? (
-        <>
-          {posts.map((post) => (
-            <BlogPostsContainer key={post.slug} post={post} />
-          ))}
-        </>
-      ) : null} */}
+     <ContentRenderer content={post.content} />
     </section>
   );
 };
