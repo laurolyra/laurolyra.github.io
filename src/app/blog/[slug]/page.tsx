@@ -14,10 +14,14 @@ export async function generateStaticParams() {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost(params.slug);
   return (
-    <section>
-      <h1>Blogs</h1>
-      <p>{post.headline}</p>
-     <ContentRenderer content={post.content} />
+    <section className="min-h-[90vh] w-8/12 container mx-auto">
+      <div className="px-6 py-4">
+        <div className="mb-4">
+          <h1 className="text-3xl">{post.title}</h1>
+          <p>{post.headline}</p>
+        </div>
+        <ContentRenderer content={post.content} />
+      </div>
     </section>
   );
 };

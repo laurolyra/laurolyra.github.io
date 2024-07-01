@@ -3,13 +3,18 @@ import DynamicTag from './DynamicTag';
 import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
 
+import { Roboto_Mono as robotoMono } from 'next/font/google';
+
+const roboto = robotoMono({ weight: "400", subsets: ['latin'] });
+
 const ContentRenderer = ({ content }: { content: string }) => (
   <ReactMarkdown
+    className="leading-relaxed"
     components={{
       h1: (props) => (
         <DynamicTag
           as="h1"
-          className="text-3xl bg-slate-500"
+          className="text-3xl"
           {...props}
         />
       ),
@@ -20,11 +25,10 @@ const ContentRenderer = ({ content }: { content: string }) => (
         <DynamicTag as="h1" className="text-xl" {...props} />
       ),
       p: (props) => (
-        <DynamicTag
-          as="p"
-          className="text-base text-red-300"
-          {...props}
-        />
+          <DynamicTag
+            as="p"
+            {...props}
+          />
       ),
       a: (props) => (
         <DynamicTag
@@ -35,23 +39,46 @@ const ContentRenderer = ({ content }: { content: string }) => (
       em: (props) => (
         <DynamicTag
           as="em"
-          className="text-base text-yellow-500"
+          className="italic"
+          {...props}
+        />
+      ),
+      blockquote: (props) => (
+        <DynamicTag
+          as="blockquote"
+          className="my-2 *:italic bg-slate-400"
+          {...props}
+        />
+      ),
+      ul: (props) => (
+        <DynamicTag
+          as="ul"
+          className="list-disc list-outside ml-4"
+          {...props}
+        />
+      ),
+      ol: (props) => (
+        <DynamicTag
+          as="ol"
+          className="list-decimal list-outside ml-4"
           {...props}
         />
       ),
       code: (props) => (
         <DynamicTag
           as="code"
-          className="text-green-400 bg-black"
+          className={`${roboto.className} text-green-400 bg-slate-950`}
           {...props}
         />
       ),
       pre: (props) => (
-        <DynamicTag
-          as="pre"
-          className="bg-blue-500 *:bg-inherit"
-          {...props}
-        />
+        <div className="bg-slate-950 flex flex-row mx-auto max-w-screen-lg" >
+          <DynamicTag
+            as="pre"
+            className={`${roboto.className} p-2 *:bg-transparent *:max-w-full`}
+            {...props}
+          />
+        </div>
       ),
       img: (img) => {
         return (

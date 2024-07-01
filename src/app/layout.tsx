@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto_Serif as robotoSerif } from 'next/font/google';
 import './globals.css';
 import buildProvidersTree from '@/components/ProvidersTree';
 
-const inter = Inter({ subsets: ['latin'] });
+const mainFont = robotoSerif({ weight: "400", subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,10 +19,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} container mx-auto`}>
+      <body className={`${mainFont.className} w-full mx-auto`}>
         <ProvidersTree>
-          <header className="bg-slate-500 min-h-[5vh]">Main header</header>
-          <main className=" bg-slate-600 min-h-[95vh]">{children}</main>
+          <header className="bg-slate-500 min-h-[5vh] text-center">Main header</header>
+          <main className=" bg-slate-600">{children}</main>
+          <footer className="bg-slate-500 min-h-[5vh] text-center">Some footer</footer>
         </ProvidersTree>
       </body>
     </html>
