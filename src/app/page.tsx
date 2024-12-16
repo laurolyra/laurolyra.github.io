@@ -1,8 +1,9 @@
 import BlogPostsContainer from '@/components/BlogPostContainer';
-import { getPosts } from '@/services/posts';
+import { PostContext } from '@/context/PostsContext';
+import { useContext } from 'react';
 
 const Home = async () => {
-  const posts = await getPosts();
+  const posts = useContext(PostContext);
   return (
     <main className="flex flex-col items-center justify-between container mx-auto py-6 px-2 md:px-4 h-full">
       {posts ? (
