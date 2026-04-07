@@ -1,5 +1,6 @@
 import { Skills } from './sections/Skills'
 import { Projects } from './sections/Projects'
+import { Contact } from './sections/Contact'
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
 
         <Skills />
         <Projects />
+        <Contact />
       </main>
     </div>
   )
