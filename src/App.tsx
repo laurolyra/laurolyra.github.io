@@ -1,120 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <div className="min-h-screen flex flex-col">
+
+      {/* Navbar */}
+      <header className="flex items-center justify-between px-8 py-5 border-b">
+        <span className="text-xl font-semibold tracking-tight">LL</span>
+        <nav className="flex gap-8 text-sm font-medium">
+          <a href="#about" className="hover:underline underline-offset-4">About</a>
+          <a href="#projects" className="hover:underline underline-offset-4">Projects</a>
+          <a href="#contact" className="hover:underline underline-offset-4">Contact</a>
+        </nav>
+      </header>
+
+      <main className="flex-1">
+
+        {/* Hero */}
+        <section
+          id="hero"
+          className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 px-8 py-24 max-w-5xl mx-auto w-full"
         >
-          Count is {count}
-        </button>
-      </section>
+          {/* Text */}
+          <div className="flex flex-col gap-6 max-w-xl">
+            <p className="text-sm font-medium tracking-widest uppercase">
+              Hi, I'm
+            </p>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+              Lauro Lyra Aguiar
+            </h1>
+            <h2 className="text-2xl font-medium">
+              Full Stack Developer
+            </h2>
+            <p className="text-base leading-relaxed">
+              I design and build web applications — from clean interfaces to
+              solid backends. Always focused on performance, scalability, and
+              great user experience.
+            </p>
+            <div className="flex gap-4 mt-2">
+              <a
+                href="#projects"
+                className="px-6 py-3 rounded-lg font-medium border-2 transition-opacity hover:opacity-80"
+              >
+                See my work
+              </a>
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-lg font-medium border-2 transition-opacity hover:opacity-80"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
 
-      <div className="ticks"></div>
+          {/* Avatar placeholder */}
+          <div
+            className="shrink-0 w-52 h-52 md:w-64 md:h-64 rounded-full border-2"
+            aria-hidden="true"
+          />
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      </main>
+    </div>
   )
 }
 
