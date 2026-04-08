@@ -23,13 +23,13 @@ export function Hero() {
         <div className="flex gap-4 mt-2">
           <a
             href="#projects"
-            className="px-6 py-3 rounded-lg font-medium border-2 transition-opacity hover:opacity-80"
+            className="px-6 py-3 rounded-lg font-medium border-2 dark:border-white transition-opacity hover:opacity-80"
           >
             See my work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-lg font-medium border-2 transition-opacity hover:opacity-80"
+            className="px-6 py-3 rounded-lg font-medium border-2 dark:border-white transition-opacity hover:opacity-80"
           >
             Get in touch
           </a>

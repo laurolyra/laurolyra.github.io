@@ -47,14 +47,14 @@ export function Projects() {
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 flex items-center justify-center w-10 h-10 rounded-full border bg-white shadow-md hover:shadow-lg transition-shadow"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 flex items-center justify-center w-10 h-10 rounded-full border dark:border-white bg-white dark:bg-black shadow-md hover:shadow-lg transition-shadow"
         >
           ‹
         </button>
         <button
           onClick={next}
           aria-label="Next project"
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 flex items-center justify-center w-10 h-10 rounded-full border bg-white shadow-md hover:shadow-lg transition-shadow"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 flex items-center justify-center w-10 h-10 rounded-full border dark:border-white bg-white dark:bg-black shadow-md hover:shadow-lg transition-shadow"
         >
           ›
         </button>
@@ -67,7 +67,7 @@ export function Projects() {
             key={i}
             onClick={() => setCurrent(i)}
             aria-label={`Go to project ${i + 1}`}
-            className={`w-2 h-2 rounded-full border transition-all duration-200 ${
+            className={`w-3 h-3 rounded-full border transition-all duration-200 cursor-pointer ${
               i === current ? 'scale-125' : 'opacity-40'
             }`}
           />

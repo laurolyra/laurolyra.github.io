@@ -6,8 +6,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ name, description, screenshot }: ProjectCardProps) {
   return (
-    <div className="flex flex-col rounded-2xl border overflow-hidden w-full shrink-0">
-      <div className="w-full aspect-video bg-neutral-100 overflow-hidden">
+    <div className="flex flex-col rounded-2xl border border-black dark:border-white overflow-hidden w-full shrink-0">
+      <div className="w-full aspect-video bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
         <img
           src={screenshot}
           alt={`${name} screenshot`}
